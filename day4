@@ -1,0 +1,8 @@
+for item in `ls`
+do
+    fileName=`echo $item | awk -F. '{ print $1 }'`
+    extensionName=`echo $item | awk -F. '{ print $2 }'`
+    mkdir -p $fileName/$extensionName
+    mv $item $fileName/$extensionName
+done
+
